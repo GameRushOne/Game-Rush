@@ -3,52 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameRush Arcade</title>
+    <title>GameRush</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #000428, #004e92);
+            font-family: 'Nunito', sans-serif;
             color: white;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
+            background: black;
         }
-        h1 {
-            font-size: 4em;
-            margin-bottom: 0.5em;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            background: -webkit-linear-gradient(#ff1e56, #f9c942);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            animation: slider 18s infinite ease-in-out; /* Slower transition animation */
+        }
+        @keyframes slider {
+            0% { opacity: 0; background-image: url('https://i.imgur.com/fphBbK3.jpeg'); }
+            25% { opacity: 1; }
+            50% { opacity: 0; background-image: url('https://i.imgur.com/Hi8MQXT.jpeg'); }
+            75% { opacity: 1; }
+            100% { opacity: 0; background-image: url('https://i.imgur.com/z8R95uJ.jpeg'); }
+        }
+        .content {
+            z-index: 1;
+            padding: 20px;
+            max-width: 600px;
+        }
+        .logo {
+            width: 450px; /* 3x larger than the original size */
+            margin-bottom: 10px; /* Minimal gap between logo and text */
+        }
+        .support-feedback {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 0.9em;
+            color: #f9c942;
+        }
+        .contact-number {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.9em;
+            color: #f9c942;
         }
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin: 0.5em 0;
             letter-spacing: 1px;
+            color: #ddd;
+        }
+        .tagline {
+            font-size: 1.4em;
+            margin-top: 0.5em; /* Reduced margin for minimal gap */
+            font-weight: 900; /* Make it bolder */
+            color: #f9c942;
         }
         .btn {
             display: inline-block;
-            margin-top: 2em;
+            margin-top: 1em; /* Reduced margin for minimal gap */
             padding: 15px 30px;
             font-size: 1.2em;
+            font-weight: 900; /* Make the button text bolder */
             text-transform: uppercase;
             letter-spacing: 2px;
             border: none;
             color: white;
-            background: #ff1e56;
+            background: #f9c942; /* Golden yellow/orange color */
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
             cursor: pointer;
             text-decoration: none;
         }
         .btn:hover {
-            background: #f9c942;
+            background: linear-gradient(90deg, #f57c00, #1976d2); /* Orange to blue gradient */
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(1);
+        }
+        .footer-note {
+            margin-top: 1em;
+            font-size: 0.8em;
+            color: #aaa;
         }
         footer {
             position: absolute;
@@ -61,11 +110,15 @@
     </style>
 </head>
 <body>
-    <div>
-        <h1>GameRush Arcade</h1>
-        <p>Where the games come alive.</p>
-        <p>Experience the thrill, the action, the rush!</p>
-        <a href="#" class="btn">Enter the Arena</a>
+    <div class="support-feedback">For support and feedback: gamerushtwo@proton.me</div>
+    <div class="contact-number">+91 9873168687</div>
+    <div class="background-slider"></div>
+    <div class="content">
+        <img src="https://i.imgur.com/PmLu0mE.png" alt="GameRush Logo" class="logo">
+        <p>Easy access, fully automated premium gaming arcade machine.</p>
+        <p class="tagline">Scan, Pay, Play.</p>
+        <a href="mailto:gamerushtwo@proton.me" class="btn">Apply Now</a>
+        <p class="footer-note">The only one of its kind worldwide.*</p>
     </div>
     <footer>
         &copy; 2024 GameRush Arcade | All Rights Reserved
